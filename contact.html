@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -11,14 +11,13 @@
   <meta property="og:title" content="문의 | Deepbind">
   <meta property="og:description" content="서비스 문의, 기술 상담, 협업 제안 등 필요한 내용을 남겨주시면 확인 후 답변드리겠습니다.">
   <meta property="og:url" content="https://deep-bind.net/contact.html">
-  <meta property="og:image" content="https://deep-bind.net/og-image.png">
-  <meta name="theme-color" content="#081120">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f6fff'/><text y='.9em' font-size='70' font-family='system-ui' font-weight='800' fill='white' x='12'>D</text></svg>">
+  <meta name="theme-color" content="#060e1c">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231a6ef5'/><text y='.88em' font-size='62' font-family='system-ui,sans-serif' font-weight='800' fill='white' x='14'>DB</text></svg>">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header class="site-header">
+  <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Deepbind 홈으로 이동">
         <span class="brand-mark">DB</span>
@@ -48,23 +47,22 @@
 
   <main>
 
-    <!-- Page Hero -->
     <section class="page-hero">
       <div class="container">
         <div class="page-eyebrow">Contact</div>
-        <h1 class="page-title">서비스 문의, 기술 상담, 협업 제안</h1>
-        <p class="page-text">궁금하신 내용을 남겨주시면 확인 후 답변드리겠습니다. 빠른 문의는 이메일 또는 전화로 바로 연락하실 수 있습니다.</p>
+        <h1 class="page-title">서비스 문의, 기술 상담,<br>협업 제안</h1>
+        <p class="page-text">궁금하신 내용을 남겨주시면 확인 후 답변드리겠습니다. 빠른 연락은 이메일 또는 전화로 바로 하실 수 있습니다.</p>
       </div>
     </section>
 
-    <!-- Contact Grid -->
     <section class="section section-surface">
       <div class="container contact-grid">
-        <article class="contact-card">
+
+        <article class="contact-card fade-up">
           <div class="section-header">
             <span class="section-kicker">Contact Info</span>
-            <h2 class="section-title">연락처 안내</h2>
-            <p class="section-description">서비스 문의, PoC 협의, 기술 제휴, 기타 상담 요청 등 필요한 내용을 편하게 전달해주십시오.</p>
+            <h2 class="section-title" style="font-size:1.5rem;">연락처 안내</h2>
+            <p class="section-desc">서비스 문의, PoC 협의, 기술 제휴, 기타 상담 요청 등 필요한 내용을 편하게 전달해 주십시오.</p>
           </div>
           <div class="contact-meta">
             <div class="contact-meta-item">
@@ -84,31 +82,43 @@
               <span><a href="tel:01041043310">010-4104-3310</a></span>
             </div>
           </div>
-          <div class="cta-actions" style="margin-top: 24px;">
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;">
             <a class="btn" href="mailto:admin@deep-bind.net">이메일 보내기</a>
-            <a class="btn-outline" href="tel:01041043310" style="color: var(--text); border-color: var(--line); background: var(--surface-soft);">전화 연결</a>
+            <a class="btn-ghost" href="tel:01041043310">전화 연결</a>
+          </div>
+          <div style="margin-top:20px;padding:14px 16px;border-radius:var(--r-md);background:var(--gray-100);border:1px solid var(--line);">
+            <p style="margin:0;font-size:.86rem;color:var(--text-soft);line-height:1.68;">
+              <strong style="color:var(--text);display:block;margin-bottom:5px;">문의 가능한 내용</strong>
+              서비스 적용 가능 여부 · PoC 또는 시범 적용 협의 · 기술 제휴 및 협업 제안 · 디바이스 및 플랫폼 관련 문의 · 기타 상담
+            </p>
           </div>
         </article>
 
-        <article class="form-card">
+        <article class="form-card fade-up">
           <div class="section-header">
-            <span class="section-kicker">Inquiry</span>
-            <h2 class="section-title">문의 접수</h2>
-            <p class="section-description">아래 양식을 작성해 주시면 검토 후 답변드리겠습니다.</p>
+            <span class="section-kicker">Inquiry Form</span>
+            <h2 class="section-title" style="font-size:1.5rem;">문의 접수</h2>
+            <p class="section-desc">아래 항목을 작성해 주시면 내용을 검토한 후 연락드리겠습니다.</p>
           </div>
-          <form action="https://formspree.io/f/xnjwlnal" method="POST">
+          <!--
+            폼 연동 옵션:
+            A) Formspree (무료): action="https://formspree.io/f/xnjwlnal" method="POST"
+            B) Basin (무료):     action="https://usebasin.com/f/xnjwlnal" method="POST"
+            가장 빠른 연락: admin@deep-bind.net 직접 이메일
+          -->
+          <form action="https://formspree.io/f/xnjwlnal" method="POST" novalidate>
             <div class="form-grid">
               <div class="form-group">
-                <label for="name">이름 / 회사명</label>
-                <input id="name" name="name" type="text" placeholder="이름 또는 회사명을 입력해 주세요" required>
+                <label for="name">이름 / 회사명 <span style="color:#d93025;">*</span></label>
+                <input id="name" name="name" type="text" placeholder="이름 또는 회사명" required autocomplete="organization">
               </div>
               <div class="form-group">
-                <label for="email">이메일</label>
-                <input id="email" name="email" type="email" placeholder="example@company.com" required>
+                <label for="email">이메일 <span style="color:#d93025;">*</span></label>
+                <input id="email" name="email" type="email" placeholder="example@company.com" required autocomplete="email">
               </div>
               <div class="form-group">
                 <label for="phone">연락처</label>
-                <input id="phone" name="phone" type="tel" placeholder="010-0000-0000">
+                <input id="phone" name="phone" type="tel" placeholder="010-0000-0000" autocomplete="tel">
               </div>
               <div class="form-group">
                 <label for="type">문의 유형</label>
@@ -121,35 +131,30 @@
                 </select>
               </div>
               <div class="form-group full">
-                <label for="message">문의 내용</label>
+                <label for="message">문의 내용 <span style="color:#d93025;">*</span></label>
                 <textarea id="message" name="message" placeholder="적용 대상 설비, 운영 환경, 문의 목적 등을 입력해 주세요" required></textarea>
               </div>
             </div>
-            <button type="submit" class="btn" style="width:100%;margin-top:18px;min-height:52px;">문의 접수하기</button>
-            <p class="notice">문의 내용은 서비스 응대 목적으로만 사용됩니다. · <a href="privacy.html">개인정보처리방침</a></p>
+            <button type="submit" class="form-submit">문의 보내기</button>
           </form>
+          <div class="notice">
+            현재 폼은 <strong>Formspree 연동 구조</strong>로 작성되어 있습니다.
+            실제 접수 활성화는 <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">formspree.io</a>에서 무료 계정 생성 후 Form ID를 교체하시면 됩니다.
+            가장 빠른 연락은 <a href="mailto:admin@deep-bind.net">admin@deep-bind.net</a> 이메일입니다.
+          </div>
         </article>
+
       </div>
     </section>
 
-    <!-- Additional Info -->
-    <section class="section">
-      <div class="container grid-2">
-        <article class="card soft">
-          <h3>다음과 같은 내용을 문의하실 수 있습니다</h3>
-          <ul class="check-list">
-            <li>서비스 적용 가능 여부</li>
-            <li>PoC 또는 시범 적용 협의</li>
-            <li>기술 제휴 및 협업 제안</li>
-            <li>디바이스 및 플랫폼 관련 문의</li>
-            <li>기타 상담 요청</li>
-          </ul>
-        </article>
-        <article class="card soft">
-          <h3>개인정보 수집 안내</h3>
-          <p>문의 응대를 위해 최소한의 개인정보를 수집할 수 있으며, 수집된 정보는 문의 대응 목적 외에는 사용하지 않습니다.</p>
-          <p class="muted" style="margin-top: 14px;">개인정보처리방침에서 수집·이용 목적 및 보관 기간을 확인하실 수 있습니다. <a href="privacy.html" style="color: var(--primary); font-weight: 600;">개인정보처리방침 보기</a></p>
-        </article>
+    <section class="section section-sm" style="padding-top:0;">
+      <div class="container">
+        <div class="card soft" style="max-width:720px;margin:0 auto;text-align:center;">
+          <p style="margin:0;color:var(--text-soft);font-size:.9rem;line-height:1.72;">
+            문의 응대를 위해 입력하신 개인정보는 문의 대응 목적 외에는 사용하지 않습니다.<br>
+            자세한 내용은 <a href="privacy.html" style="color:var(--blue);font-weight:700;">개인정보처리방침</a>을 참고하십시오.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -162,8 +167,8 @@
         <span>산업용 모터 예지보전을 위한 무선 Edge AI 디바이스 및 모니터링 플랫폼</span>
       </div>
       <div class="footer-meta">
-        Email. <a href="mailto:admin@deep-bind.net">admin@deep-bind.net</a> · Tel. <a href="tel:01041043310">010-4104-3310</a><br>
-        © 2026 Deepbind. All rights reserved.
+        Email. <a href="mailto:admin@deep-bind.net">admin@deep-bind.net</a> &nbsp;&middot;&nbsp; Tel. <a href="tel:01041043310">010-4104-3310</a><br>
+        &copy; 2026 Deepbind. All rights reserved.
       </div>
       <div class="footer-links">
         <a href="index.html">메인</a>
@@ -174,18 +179,6 @@
     </div>
   </footer>
 
-  <script>
-    (function() {
-      var btn = document.getElementById('hamburger');
-      var nav = document.getElementById('mobileNav');
-      if (!btn || !nav) return;
-      btn.addEventListener('click', function() {
-        var open = nav.classList.toggle('open');
-        btn.classList.toggle('open', open);
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>

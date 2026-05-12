@@ -1,24 +1,23 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deepbind | 산업용 모터 예지보전 무선 Edge AI 디바이스 및 모니터링 플랫폼</title>
-  <meta name="description" content="Deepbind는 산업용 모터 및 회전체 설비의 예지보전을 위한 무선 Edge AI 디바이스와 상태 모니터링 플랫폼을 기획·개발하는 B2B 기술기업입니다.">
+  <title>Deepbind | 산업용 모터 예지보전을 위한 무선 Edge AI 디바이스 및 모니터링 플랫폼</title>
+  <meta name="description" content="Deepbind는 무선 Edge AI 디바이스와 모니터링 플랫폼으로 산업용 모터의 이상 징후를 조기에 감지하고, 데이터 기반 예지보전 체계 구축을 지원하는 B2B 기술기업입니다.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://deep-bind.net/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Deepbind | 산업용 모터 예지보전 무선 Edge AI">
-  <meta property="og:description" content="산업 현장의 회전체 설비 데이터를 수집·분석하여 이상 징후를 조기에 파악하고, 데이터 기반 유지보수 체계 구축을 지원합니다.">
+  <meta property="og:description" content="무선 Edge AI 디바이스와 상태 모니터링 플랫폼으로 설비 이상 징후를 조기에 감지하고 예지보전 체계를 구축합니다.">
   <meta property="og:url" content="https://deep-bind.net/">
-  <meta property="og:image" content="https://deep-bind.net/og-image.png">
-  <meta name="theme-color" content="#081120">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f6fff'/><text y='.9em' font-size='70' font-family='system-ui' font-weight='800' fill='white' x='12'>D</text></svg>">
+  <meta property="og:image" content="https://deep-bind.net/assets/og-image.png">
+  <meta name="theme-color" content="#060e1c">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231a6ef5'/><text y='.88em' font-size='62' font-family='system-ui,sans-serif' font-weight='800' fill='white' x='14'>DB</text></svg>">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <header class="site-header">
+  <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Deepbind 홈으로 이동">
         <span class="brand-mark">DB</span>
@@ -50,41 +49,66 @@
 
     <!-- Hero -->
     <section class="home-hero">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
       <div class="container hero-grid">
         <div>
           <div class="hero-eyebrow">무선 Edge AI · 예지보전 솔루션</div>
-          <h1 class="hero-title">산업용 모터 예지보전을 위한<br>무선 Edge AI 디바이스 및<br>모니터링 플랫폼</h1>
-          <p class="hero-text">Deepbind는 산업 현장의 회전체 설비 데이터를 수집·분석하여 이상 징후를 조기에 파악하고, 보다 효율적인 유지보수 체계 구축을 지원합니다.</p>
+          <h1 class="hero-title">산업 설비 이상,<br>정지 전에 감지합니다</h1>
+          <p class="hero-text">Deepbind는 무선 Edge AI 디바이스와 상태 모니터링 플랫폼으로 산업 현장 회전체 설비의 이상 징후를 조기에 파악하고, 데이터 기반 예지보전 체계 구축을 지원하는 B2B 기술기업입니다.</p>
           <div class="hero-actions">
             <a class="btn" href="services.html">서비스 알아보기</a>
             <a class="btn-outline" href="contact.html">문의하기</a>
           </div>
-          <div class="hero-stats">
-            <div class="stat-box">
+          <div class="hero-stat-row" style="margin-top:28px;">
+            <div class="hero-stat">
               <strong>Wireless</strong>
-              <span>현장 제약을 고려한 무선 기반 구조</span>
+              <span>비침습 무선 설치</span>
             </div>
-            <div class="stat-box">
+            <div class="hero-stat">
               <strong>Edge AI</strong>
-              <span>이상 징후 조기 감지를 위한 분석 방향</span>
+              <span>On-Device 추론</span>
             </div>
-            <div class="stat-box">
-              <strong>IoT Platform</strong>
-              <span>데이터 수집부터 모니터링까지 연계</span>
+            <div class="hero-stat">
+              <strong>Platform</strong>
+              <span>통합 모니터링</span>
             </div>
           </div>
         </div>
-        <aside class="hero-card" aria-label="핵심 메시지">
-          <h3>설비 운영의 불확실성을 줄이고,<br>데이터 기반 예지보전 체계를 현실적으로 구현합니다.</h3>
-          <p>Deepbind는 현장 적용성, 운영 효율, 단계적 도입 가능성을 함께 고려하는 B2B 기술기업형 접근을 지향합니다.</p>
+        <aside class="hero-visual">
+          <h3>설비 운영의 불확실성을 줄이고,<br>데이터 기반 예지보전 체계를<br>현실적으로 구현합니다.</h3>
+          <p>현장 적용성, 운영 효율, 단계적 도입 가능성을 함께 고려하는 기술기업형 접근을 지향합니다.</p>
           <ul>
             <li>산업용 모터 및 회전체 설비 중심</li>
             <li>현장 데이터 수집과 웹 기반 모니터링 연계</li>
-            <li>PoC부터 초기 적용 범위까지 현실적인 검토 지원</li>
+            <li>PoC부터 단계적 도입까지 현실적 검토 지원</li>
           </ul>
         </aside>
       </div>
     </section>
+
+    <!-- KPI Strip -->
+    <div class="kpi-strip">
+      <div class="container">
+        <div class="kpi-grid">
+          <div class="kpi-item">
+            <span class="kpi-val" data-target="98" data-suffix="%">98%</span>
+            <span class="kpi-label">고장 감지<br>정확도</span>
+          </div>
+          <div class="kpi-item">
+            <span class="kpi-val" data-target="1" data-suffix="%">≤1%</span>
+            <span class="kpi-label">오탐율<br>(False Positive)</span>
+          </div>
+          <div class="kpi-item">
+            <span class="kpi-val" data-target="1" data-suffix="초">1초</span>
+            <span class="kpi-label">부팅 &amp; 추론<br>소요 시간</span>
+          </div>
+          <div class="kpi-item">
+            <span class="kpi-val" data-target="1" data-suffix="년+">1년+</span>
+            <span class="kpi-label">배터리<br>지속 수명</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Key Value -->
     <section class="section section-surface">
@@ -92,90 +116,363 @@
         <div class="section-header">
           <span class="section-kicker">Key Value</span>
           <h2 class="section-title">왜 Deepbind인가</h2>
-          <p class="section-description">복잡한 기술을 과시하기보다 실제 현장에서 적용 가능하고 운영 가능한 구조를 만드는 데 초점을 맞춥니다.</p>
+          <p class="section-desc">복잡한 기술보다 실제 현장에서 적용하고 운영 가능한 구조를 만드는 데 집중합니다.</p>
         </div>
         <div class="grid-3">
-          <article class="card soft">
-            <h3>현장 적용을 고려한 무선 기반 구조</h3>
-            <p>배선과 설치 제약이 큰 산업 현장을 고려하여 보다 유연하게 적용 가능한 무선 기반 설비 모니터링 구조를 지향합니다.</p>
+          <article class="card soft fade-up">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>비침습 무선 Retrofit 설치</h3>
+            <p>기존 설비 교체나 배선 공사 없이 회전체에 무선 디바이스를 부착해 즉시 모니터링 환경을 구성합니다. 현장 가동 중단 없이 도입 가능합니다.</p>
           </article>
-          <article class="card soft">
-            <h3>Edge AI 기반 이상 징후 감지</h3>
-            <p>설비 상태 데이터를 기반으로 이상 변화를 조기에 파악할 수 있도록, 현장 친화적인 분석 구조를 설계합니다.</p>
+          <article class="card soft fade-up">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </div>
+            <h3>On-Device Edge AI 추론</h3>
+            <p>클라우드에 의존하지 않고 디바이스 자체에서 1초 이내에 AI 추론을 수행합니다. Always-on NPU와 Deep-Sleep MCU의 이중 구조로 저전력과 고정밀을 동시에 실현합니다.</p>
           </article>
-          <article class="card soft">
-            <h3>IoT와 플랫폼을 연결하는 실무 경험</h3>
-            <p>현장 디바이스, 무선 통신, 서버 플랫폼, 운영 화면까지 이어지는 흐름을 바탕으로 실제 운영에 적합한 구조를 고민합니다.</p>
+          <article class="card soft fade-up">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>IoT–플랫폼 통합 경험</h3>
+            <p>센서 수집부터 무선 통신, 서버 연계, 웹 기반 운영 화면까지 하나의 흐름으로 설계합니다. 현장형 IoT 프로젝트 다수의 실무 경험이 기반입니다.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Challenges -->
-    <section class="section">
-      <div class="container split-panel">
-        <div class="card">
-          <div class="section-header">
-            <span class="section-kicker">Challenges</span>
-            <h2 class="section-title">이런 과제를 안고 계신가요</h2>
-            <p class="section-description">모터, 펌프, 팬, 블로워 등 회전체 설비의 이상을 정지 이후에 인지하거나 정기 점검에 의존해 대응하는 방식은 예기치 않은 정지, 유지보수 비용 증가, 운영 비효율로 이어질 수 있습니다.</p>
-          </div>
-          <p class="muted">Deepbind는 설비 상태를 지속적으로 확인하고, 이상 징후를 보다 이른 시점에 파악할 수 있는 기반을 제공함으로써 데이터 중심의 유지보수 체계 전환을 지원합니다.</p>
-          <div class="badge-grid">
-            <span class="badge">산업용 모터</span>
-            <span class="badge">펌프 및 송풍기</span>
-            <span class="badge">팬 · 블로워</span>
-            <span class="badge">스마트팩토리 환경</span>
-          </div>
+    <!-- Market Problem -->
+    <section class="market-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Market Problem</span>
+          <h2 class="section-title">국내 산업용 모터의 현실</h2>
+          <p class="section-desc">약 1,200만 대의 국내 산업용 모터 중 90% 이상이 예지보전 체계 없이 운영되고 있습니다.</p>
         </div>
-        <div class="metric-panel">
-          <h3>기대할 수 있는 효과</h3>
-          <div class="metric-list">
-            <div class="metric-item">
-              <strong>설비 이상 징후의 조기 파악</strong>
-              <span>상태 변화의 초기 신호를 빠르게 확인할 수 있는 기반을 제공합니다.</span>
+        <div class="market-grid">
+          <div>
+            <div class="market-chart-wrap">
+              <svg viewBox="0 0 240 240" width="220" height="220"
+                   role="img" aria-label="예지보전 미적용 비율 90% 도넛 차트">
+                <defs>
+                  <linearGradient id="gBlueD" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1a6ef5"/><stop offset="100%" stop-color="#1fb8f5"/>
+                  </linearGradient>
+                  <filter id="glow2">
+                    <feGaussianBlur stdDeviation="3" result="b"/>
+                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                </defs>
+                <circle cx="120" cy="120" r="88" fill="none" stroke="#e6edf6" stroke-width="26"/>
+                <circle cx="120" cy="120" r="88" fill="none"
+                  stroke="#d43a3a" stroke-width="26" opacity=".55"
+                  stroke-dasharray="497.8 553.1" stroke-dashoffset="-55.3"
+                  transform="rotate(-90 120 120)"/>
+                <circle id="donut-applied" cx="120" cy="120" r="88" fill="none"
+                  stroke="url(#gBlueD)" stroke-width="26" stroke-linecap="round"
+                  stroke-dasharray="55.3 553.1" transform="rotate(-90 120 120)"
+                  filter="url(#glow2)"/>
+                <text x="120" y="112" text-anchor="middle"
+                  font-size="34" font-weight="800" fill="#0f1e33"
+                  font-family="system-ui,sans-serif">90%</text>
+                <text x="120" y="136" text-anchor="middle"
+                  font-size="12" fill="#64748b"
+                  font-family="system-ui,sans-serif">예지보전 미적용</text>
+              </svg>
+              <div class="market-legend">
+                <div class="legend-row">
+                  <span class="legend-dot" style="background:#1a6ef5;"></span>
+                  <span class="legend-label">예지보전 적용</span>
+                  <span class="legend-pct">10%</span>
+                </div>
+                <div class="legend-row">
+                  <span class="legend-dot" style="background:#d43a3a;"></span>
+                  <span class="legend-label">예지보전 미적용</span>
+                  <span class="legend-pct">90%+</span>
+                </div>
+              </div>
             </div>
-            <div class="metric-item">
-              <strong>예기치 않은 정지 리스크 완화</strong>
-              <span>운영 중단 가능성을 낮추고 점검 대응의 타이밍을 앞당길 수 있습니다.</span>
+            <div class="stat-cards" style="margin-top:22px;">
+              <div class="stat-card">
+                <div class="num blue">1,200만</div>
+                <div class="label">국내 산업용<br>모터 추정 대수</div>
+              </div>
+              <div class="stat-card">
+                <div class="num red">90%+</div>
+                <div class="label">예지보전 체계<br>미적용 비율</div>
+              </div>
             </div>
-            <div class="metric-item">
-              <strong>데이터 기반 유지보수 체계 구축 지원</strong>
-              <span>감각 중심 점검에서 데이터 기반 의사결정 체계로 전환하는 출발점을 마련합니다.</span>
+          </div>
+          <div>
+            <div class="metric-panel" style="margin-bottom:18px;">
+              <h3>예기치 않은 설비 정지의 영향</h3>
+              <div class="metric-list">
+                <div class="metric-item">
+                  <strong>생산 가동률 저하</strong>
+                  <span>비계획 정지는 생산 스케줄을 직접 훼손하며 납기 지연으로 이어집니다.</span>
+                </div>
+                <div class="metric-item">
+                  <strong>긴급 수리 비용 증가</strong>
+                  <span>계획 없는 고장 대응은 부품 조달과 인력 투입 비용을 크게 높입니다.</span>
+                </div>
+                <div class="metric-item">
+                  <strong>설비 수명 단축</strong>
+                  <span>이상 상태를 방치하면 2차 손상으로 이어져 전체 설비 수명이 줄어듭니다.</span>
+                </div>
+              </div>
+            </div>
+            <div class="effect-list">
+              <div class="effect-item">
+                <div class="effect-icon">📡</div>
+                <div>
+                  <strong>이상 징후 조기 파악</strong>
+                  <span>상태 변화의 초기 신호를 빠르게 확인할 수 있는 기반을 제공합니다.</span>
+                </div>
+              </div>
+              <div class="effect-item">
+                <div class="effect-icon">🔋</div>
+                <div>
+                  <strong>배터리 1년+ 독립 운영</strong>
+                  <span>전원 배선 없이 장기간 지속적인 상태 수집이 가능합니다.</span>
+                </div>
+              </div>
+              <div class="effect-item">
+                <div class="effect-icon">📊</div>
+                <div>
+                  <strong>데이터 기반 유지보수 전환</strong>
+                  <span>감각 중심 점검에서 데이터 기반 의사결정으로 전환하는 출발점입니다.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Services Overview -->
+    <!-- Architecture SVG -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Technology</span>
+          <h2 class="section-title">Dual-Chip Edge AI 아키텍처</h2>
+          <p class="section-desc">Always-on NPU와 Deep-Sleep MCU의 이중 구조로 저전력 유지와 고정밀 추론을 동시에 실현합니다. 각 노드에 마우스를 올리면 상세 역할을 확인할 수 있습니다.</p>
+        </div>
+        <div class="arch-diagram fade-up">
+          <svg viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Deepbind Dual-Chip 아키텍처 다이어그램"
+               style="width:100%;height:auto;overflow:visible;">
+            <defs>
+              <linearGradient id="gBA" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1a6ef5"/><stop offset="100%" stop-color="#1fb8f5"/>
+              </linearGradient>
+              <linearGradient id="gNA" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0d1f3c"/><stop offset="100%" stop-color="#112b54"/>
+              </linearGradient>
+              <linearGradient id="gGA" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#10b981"/>
+              </linearGradient>
+              <filter id="gfA">
+                <feGaussianBlur stdDeviation="2.5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <marker id="arrA" markerWidth="8" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                <path d="M0 0 L0 7 L8 3.5 z" fill="#1a6ef5"/>
+              </marker>
+              <marker id="arrGA" markerWidth="8" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                <path d="M0 0 L0 7 L8 3.5 z" fill="#10b981"/>
+              </marker>
+            </defs>
+            <rect x="8" y="24" width="290" height="332" rx="18" fill="#f4f8fc" stroke="#cdd8e8" stroke-width="1.5"/>
+            <rect x="318" y="24" width="244" height="332" rx="18" fill="#f0f5fb" stroke="#cdd8e8" stroke-width="1.5"/>
+            <rect x="582" y="24" width="290" height="332" rx="18" fill="#f4f8fc" stroke="#cdd8e8" stroke-width="1.5"/>
+            <text x="153" y="50" text-anchor="middle" font-size="11" font-weight="700" fill="#64748b" font-family="system-ui" letter-spacing=".07em">DEVICE</text>
+            <text x="440" y="50" text-anchor="middle" font-size="11" font-weight="700" fill="#64748b" font-family="system-ui" letter-spacing=".07em">WIRELESS LINK</text>
+            <text x="727" y="50" text-anchor="middle" font-size="11" font-weight="700" fill="#64748b" font-family="system-ui" letter-spacing=".07em">PLATFORM</text>
+            <g class="arch-node" tabindex="0" role="button" aria-label="진동·온도 센서: 회전체 설비에 비침습 부착">
+              <title>진동·온도 센서: 회전체 설비에 비침습 Retrofit 부착, 무선 연결</title>
+              <rect x="28" y="70" width="118" height="58" rx="13" fill="url(#gNA)" filter="url(#gfA)"/>
+              <text x="87" y="95" text-anchor="middle" font-size="11" fill="rgba(237,242,249,.7)" font-family="system-ui">Sensor</text>
+              <text x="87" y="112" text-anchor="middle" font-size="10.5" fill="white" font-weight="700" font-family="system-ui">진동 · 온도</text>
+            </g>
+            <g class="arch-node" tabindex="0" role="button" aria-label="Always-on NPU: 저전력 항시 동작, Pattern Wake-up">
+              <title>Always-on NPU: 저전력 항시 동작, Pattern Wake-up으로 이상 감지 시 MCU 활성화</title>
+              <rect x="162" y="70" width="118" height="58" rx="13" fill="url(#gBA)" filter="url(#gfA)"/>
+              <text x="221" y="95" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.8)" font-family="system-ui">Always-on</text>
+              <text x="221" y="112" text-anchor="middle" font-size="10.5" fill="white" font-weight="700" font-family="system-ui">NPU</text>
+            </g>
+            <path d="M146 99 L162 99" stroke="#1a6ef5" stroke-width="1.8" stroke-dasharray="4 2" marker-end="url(#arrA)"/>
+            <g class="arch-node" tabindex="0" role="button" aria-label="Deep-Sleep MCU: 평시 극저전력, 이상 감지 시 정밀 분석">
+              <title>Deep-Sleep MCU: 평시 극저전력 대기, NPU 이상 감지 시 깨어나 정밀 분석 수행</title>
+              <rect x="78" y="172" width="196" height="58" rx="13" fill="url(#gNA)" filter="url(#gfA)"/>
+              <text x="176" y="197" text-anchor="middle" font-size="11" fill="rgba(237,242,249,.7)" font-family="system-ui">Pattern Wake-up</text>
+              <text x="176" y="214" text-anchor="middle" font-size="10.5" fill="white" font-weight="700" font-family="system-ui">Deep-Sleep MCU</text>
+            </g>
+            <path d="M221 128 L221 172" stroke="#1fb8f5" stroke-width="1.8" stroke-dasharray="4 2"/>
+            <rect x="66" y="272" width="216" height="44" rx="11" fill="rgba(26,110,245,.09)" stroke="rgba(26,110,245,.18)" stroke-width="1"/>
+            <text x="174" y="290" text-anchor="middle" font-size="11" fill="#1a6ef5" font-weight="700" font-family="system-ui">On-Device AI Inference</text>
+            <text x="174" y="307" text-anchor="middle" font-size="9.5" fill="#64748b" font-family="system-ui">클라우드 미의존 · 1초 이내 추론</text>
+            <g class="arch-node" tabindex="0" role="button" aria-label="무선 IoT 통신: 수집 데이터를 플랫폼으로 전달">
+              <title>무선 IoT 통신: 수집 데이터를 클라우드 플랫폼으로 안전하게 전달</title>
+              <rect x="336" y="138" width="208" height="104" rx="14" fill="white" stroke="#cdd8e8" stroke-width="1.5"/>
+              <text x="440" y="168" text-anchor="middle" font-size="11" fill="#64748b" font-family="system-ui">Wireless IoT Link</text>
+              <path d="M378 198 Q394 186 410 198 Q426 210 442 198 Q458 186 474 198 Q490 210 502 198" stroke="#1a6ef5" stroke-width="2.2" fill="none" opacity=".75"/>
+              <path d="M374 188 Q394 172 414 188 Q434 204 454 188 Q474 172 490 188 Q506 204 508 188" stroke="#1fb8f5" stroke-width="1.4" fill="none" opacity=".35"/>
+            </g>
+            <path d="M298 190 L336 190" stroke="#1a6ef5" stroke-width="2" marker-end="url(#arrA)"/>
+            <g class="arch-node" tabindex="0" role="button" aria-label="IoT 서버: 센서 데이터 수집 및 저장">
+              <title>IoT 서버: 무선 링크로 전달된 센서 데이터를 수집·저장하고 분석 엔진으로 전달</title>
+              <rect x="600" y="70" width="252" height="58" rx="13" fill="url(#gNA)" filter="url(#gfA)"/>
+              <text x="726" y="95" text-anchor="middle" font-size="11" fill="rgba(237,242,249,.7)" font-family="system-ui">IoT Server</text>
+              <text x="726" y="112" text-anchor="middle" font-size="10.5" fill="white" font-weight="700" font-family="system-ui">데이터 수집 · 저장</text>
+            </g>
+            <g class="arch-node" tabindex="0" role="button" aria-label="AI 분석 엔진: 이상 징후 감지 및 예측">
+              <title>AI 분석 엔진: 수집 데이터를 AI 모델로 분석, 설비 상태 변화 감지 및 예측</title>
+              <rect x="600" y="170" width="252" height="58" rx="13" fill="url(#gBA)" filter="url(#gfA)"/>
+              <text x="726" y="195" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.8)" font-family="system-ui">AI Analysis Engine</text>
+              <text x="726" y="212" text-anchor="middle" font-size="10.5" fill="white" font-weight="700" font-family="system-ui">이상 징후 감지 · 예측</text>
+            </g>
+            <g class="arch-node" tabindex="0" role="button" aria-label="웹 대시보드: 설비 상태 실시간 모니터링">
+              <title>웹 대시보드: 설비별 상태, 이상 알림을 웹 기반으로 실시간 확인</title>
+              <rect x="600" y="270" width="252" height="58" rx="13" fill="url(#gGA)" filter="url(#gfA)"/>
+              <text x="726" y="295" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.8)" font-family="system-ui">Web Dashboard</text>
+              <text x="726" y="312" text-anchor="middle" font-size="10.5" fill="white" font-weight="700" font-family="system-ui">실시간 모니터링</text>
+            </g>
+            <path d="M544 190 L600 190" stroke="#1a6ef5" stroke-width="2" marker-end="url(#arrA)"/>
+            <path d="M726 128 L726 170" stroke="#1fb8f5" stroke-width="1.8"/>
+            <circle cx="726" cy="169" r="3" fill="#1fb8f5"/>
+            <path d="M726 228 L726 270" stroke="#10b981" stroke-width="1.8" marker-end="url(#arrGA)"/>
+          </svg>
+        </div>
+        <div class="arch-concepts">
+          <div class="arch-concept fade-up">
+            <div class="icon">⚡</div>
+            <h4>Always-on NPU</h4>
+            <p>항시 저전력으로 동작하며 이상 패턴을 지속 감시합니다. Pattern Wake-up 구조로 MCU를 최소한으로 가동합니다.</p>
+          </div>
+          <div class="arch-concept fade-up">
+            <div class="icon">🔋</div>
+            <h4>Deep-Sleep MCU</h4>
+            <p>평시 극저전력 대기 상태를 유지하고, NPU 이상 감지 시에만 깨어나 정밀 분석을 수행합니다.</p>
+          </div>
+          <div class="arch-concept fade-up">
+            <div class="icon">📡</div>
+            <h4>Retrofit 무선 부착</h4>
+            <p>기존 설비 교체나 배선 변경 없이 비침습 방식으로 부착합니다. 배터리 1년+ 독립 동작합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="section section-surface">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Differentiation</span>
+          <h2 class="section-title">기존 방식과의 차별점</h2>
+          <p class="section-desc">기존 유선 시스템이나 저가형 릴레이 기반 방식과 Deepbind 무선 Edge AI 솔루션을 비교합니다.</p>
+        </div>
+        <div class="comp-wrap fade-up">
+          <table class="comp-table">
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>기존 유선 시스템</th>
+                <th>저가형 릴레이 기반</th>
+                <th class="col-deepbind">Deepbind 무선 Edge AI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>설치 방식</td>
+                <td class="col-legacy">배선 공사 필요, 설치 비용 高</td>
+                <td class="col-legacy">단순 설치, 제한적 연동</td>
+                <td class="col-deepbind"><span class="good">비침습 Retrofit, 무선 부착</span></td>
+              </tr>
+              <tr>
+                <td>AI 추론</td>
+                <td class="col-legacy">서버 의존, 네트워크 필요</td>
+                <td class="col-legacy">없음 (단순 임계값)</td>
+                <td class="col-deepbind"><span class="good">On-Device Edge AI, 1초 이내</span></td>
+              </tr>
+              <tr>
+                <td>결함 감지 범위</td>
+                <td class="col-legacy">한정적 (사후 알림 중심)</td>
+                <td class="col-legacy">과부하 등 단순 항목</td>
+                <td class="col-deepbind"><span class="good">이상 패턴 다차원 분석</span></td>
+              </tr>
+              <tr>
+                <td>오탐율</td>
+                <td class="col-legacy">높음 (임계값 기반)</td>
+                <td class="col-legacy">높음</td>
+                <td class="col-deepbind"><span class="good">≤ 1% (AI 기반)</span></td>
+              </tr>
+              <tr>
+                <td>전원</td>
+                <td class="col-legacy">상시 전원 필요</td>
+                <td class="col-legacy">상시 전원 필요</td>
+                <td class="col-deepbind"><span class="good">배터리 1년+ 독립 운영</span></td>
+              </tr>
+              <tr>
+                <td>모니터링</td>
+                <td class="col-legacy">별도 시스템 구축 필요</td>
+                <td class="col-legacy">단순 수치 표시</td>
+                <td class="col-deepbind"><span class="good">웹 기반 통합 대시보드</span></td>
+              </tr>
+              <tr>
+                <td>도입 방식</td>
+                <td class="col-legacy">대규모 초기 구축</td>
+                <td class="col-legacy">단순 교체</td>
+                <td class="col-deepbind"><span class="good">PoC 중심 단계적 도입</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
     <section class="section section-dark">
       <div class="container">
         <div class="section-header">
           <span class="section-kicker">Services</span>
-          <h2 class="section-title">Deepbind의 주요 서비스</h2>
-          <p class="section-description">디바이스, 플랫폼, 분석 지원, 현장 적용 협의를 중심으로 예지보전 도입의 현실적인 출발점을 제공합니다.</p>
+          <h2 class="section-title">Deepbind 주요 서비스</h2>
+          <p class="section-desc">디바이스, 플랫폼, 분석 지원, 현장 협의를 중심으로 예지보전 도입의 현실적인 출발점을 제공합니다.</p>
         </div>
         <div class="grid-4">
-          <article class="card">
+          <article class="card fade-up">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
             <h3>무선 Edge AI 디바이스</h3>
-            <p>산업용 모터 및 회전체 설비의 상태 데이터를 수집하기 위한 현장형 디바이스 구조를 제안합니다.</p>
+            <p>비침습 무선 부착으로 설비 상태를 수집하고 On-Device AI로 즉시 분석합니다.</p>
           </article>
-          <article class="card">
+          <article class="card fade-up">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
             <h3>상태 모니터링 플랫폼</h3>
-            <p>설비별 상태와 데이터 흐름을 확인할 수 있는 웹 기반 모니터링 환경을 제공합니다.</p>
+            <p>설비별 상태와 데이터 흐름을 웹 기반 대시보드로 한눈에 확인합니다.</p>
           </article>
-          <article class="card">
+          <article class="card fade-up">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
             <h3>이상 징후 분석 지원</h3>
-            <p>상태 변화 데이터를 바탕으로 이상 감지 및 예지보전 적용 방향을 함께 검토합니다.</p>
+            <p>상태 변화 데이터를 바탕으로 이상 감지 방향과 예지보전 적용을 검토합니다.</p>
           </article>
-          <article class="card">
+          <article class="card fade-up">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
             <h3>PoC 및 현장 적용 협의</h3>
-            <p>설비 특성과 운영 환경에 맞는 초기 적용 범위 및 검증 방향을 논의합니다.</p>
+            <p>설비 특성과 운영 환경에 맞는 초기 검증 범위와 도입 방향을 함께 논의합니다.</p>
           </article>
         </div>
-        <div style="margin-top:32px; text-align:center;">
-          <a class="btn-light" href="services.html">서비스 상세 보기</a>
+        <div style="margin-top:32px;text-align:center;">
+          <a class="btn-light" href="services.html">서비스 상세 보기 →</a>
         </div>
       </div>
     </section>
@@ -183,7 +480,7 @@
     <!-- CTA -->
     <section class="section section-sm">
       <div class="container">
-        <div class="cta-panel">
+        <div class="cta-panel fade-up">
           <h2>설비 상태 모니터링과 예지보전,<br>현장에 맞는 방식으로 시작해보십시오</h2>
           <p>도입 가능성 검토, 기술 문의, 협업 논의 등 필요한 내용을 남겨주시면 확인 후 답변드리겠습니다.</p>
           <div class="cta-actions">
@@ -203,8 +500,8 @@
         <span>산업용 모터 예지보전을 위한 무선 Edge AI 디바이스 및 모니터링 플랫폼</span>
       </div>
       <div class="footer-meta">
-        Email. <a href="mailto:admin@deep-bind.net">admin@deep-bind.net</a> · Tel. <a href="tel:01041043310">010-4104-3310</a><br>
-        © 2026 Deepbind. All rights reserved.
+        Email. <a href="mailto:admin@deep-bind.net">admin@deep-bind.net</a> &nbsp;&middot;&nbsp; Tel. <a href="tel:01041043310">010-4104-3310</a><br>
+        &copy; 2026 Deepbind. All rights reserved.
       </div>
       <div class="footer-links">
         <a href="about.html">회사소개</a>
@@ -215,18 +512,6 @@
     </div>
   </footer>
 
-  <script>
-    (function() {
-      var btn = document.getElementById('hamburger');
-      var nav = document.getElementById('mobileNav');
-      if (!btn || !nav) return;
-      btn.addEventListener('click', function() {
-        var open = nav.classList.toggle('open');
-        btn.classList.toggle('open', open);
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
